@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>VL360-Interactive.com</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <link rel="icon" href="/static/favicon.png">
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif" class="flex flex-col min-h-screen">
+  <div class="flex flex-col">
+    {% include "partials/header.html" %}
+  </div>
+  <div class="container mx-auto flex-grow">
+    {% block content %}{% endblock %}
+  </div>
+  {% include "partials/footer.html" %}
+</body>
+
+</html>

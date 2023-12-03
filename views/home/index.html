@@ -1,0 +1,30 @@
+{% extends "partials/base.html" %}
+{% block content %}
+<section class="vlprimary vlprimarytext body-font rounded-b-lg">
+  <div class="container px-5 py-8 mx-auto">
+    <div class="flex flex-wrap w-full">
+      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+        <h1 class="sm:text-3xl text-2xl text-white font-bold title-font mb-2">Stop Memorizing & <span class="vlsecondarytext">Start Learning in 360°</span></h1>
+        <div class="h-1 w-20 vlsecondary rounded"></div>
+      </div>
+      <p class="lg:w-1/2 w-full leading-relaxed text-white">VL360-Interactive is proud to present a groundbreaking learning experience that is set to revolutionize the mastery of International Residential Codes and the State of Texas Administrative Code - Standards of Practice. Our upcoming release promises engaging interactivity, visually-rich experiences, and memorable lessons that transcend traditional memorization techniques. Designed to seamlessly supplement in-classroom learning, these environments aim to enhance understanding and retention. Explore the future of education with VL360 by clicking on any of the demos below and stay tuned for the big reveal as we countdown to an immersive approach to learning where innovation meets excellence.</p>
+    </div>
+</section>
+<section class="flex flex-wrap justify-center">
+  {% for product in DemoCards %}
+    <div class="xl:w-1/4 md:w-1/2 p-4">
+      <div class="bg-gray-300 p-6 rounded-lg h-full flex flex-col">
+        <div class="flex items-start">
+          <div class="flex-grow">
+            <h3 class="tracking-widest vlprimarytext font-extrabold title-font">{{ product.Package }}</h3>
+            <h2 class="text-lg title-font mb-2">{{ product.Classification }}</h2>
+          </div>
+          <button class="vlsecondary hover:vlsecondaryhl text-white font-bold py-2 px-4 rounded"><a href="{{ product.RedirectLink }}" target="_blank" rel="noopener noreferrer">Launch Demo</a></button>
+        </div>
+        <div class="h-1 w-full vlsecondary"> </div>
+        <p class="mt-5 leading-relaxed text-base flex-grow">{{ product.Description }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}
