@@ -1,0 +1,52 @@
+{% extends "partials/base.html" %}
+{% block content %}
+<section class="body-font vlprimary rounded-lg">
+  <div class="container px-5 py-8 mx-auto flex flex-wrap">
+    <h2 class="vlsecondarytext my-auto sm:text-3xl text-2xl text-center font-extrabold title-font md:w-2/5">Full modules
+      are on the way
+    </h2>
+    <div class="md:w-3/5 md:pl-6">
+      <div class="flex mx-auto text-white">
+        <ul>
+          <li><span class="text-lg font-extrabold vlsecondarytext">Simulated Real World Experiences: </span>Engage in
+            lifelike scenarios
+            mirroring
+            actual inspection challenges.
+          </li>
+          <li><span class="text-lg font-bold vlsecondarytext">Comprehensive Learning: </span>Acquire in-depth knowledge
+            through our
+            interactive modules designed for enhancing your
+            understanding.</li>
+          <li><span class="text-lg font-bold vlsecondarytext">Continuous Improvement: </span>Receive instant feedback,
+            allowing you to
+            refine your skills and grow with each
+            simulated inspection.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<p class="mt-2 text-xl leading-relaxed text-center">As we gear up for the grand launch, satiate your
+  curiosity by exploring the other
+  modules currently available.</p>
+<div class="h-1 w-full vlsecondary"> </div>
+<section class="flex flex-wrap justify-center">
+  {% for product in DemoCards %}
+  <div class="xl:w-1/4 md:w-1/2 p-4">
+    <div class="bg-gray-300 p-6 rounded-lg h-full flex flex-col">
+      <div class="flex items-start">
+        <div class="flex-grow">
+          <h3 class="tracking-widest vlprimarytext font-extrabold title-font">{{ product.Package }}</h3>
+          <h2 class="text-lg title-font mb-2">{{ product.Classification }}</h2>
+        </div>
+        <button class="vlsecondary hover:vlsecondaryhl text-white font-bold py-2 px-4 rounded"><a
+            href="{{ product.RedirectLink }}" target="_blank" rel="noopener noreferrer">Launch Demo</a></button>
+      </div>
+      <div class="h-1 w-full vlsecondary"> </div>
+      <p class="mt-5 leading-relaxed text-base flex-grow">{{ product.Description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

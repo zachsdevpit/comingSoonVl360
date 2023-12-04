@@ -16,7 +16,7 @@ func main() {
 	}
 	app.Static("/static", "./static")
 	app.Get("/", handleGetHome)
-
+	app.Get("/signin", handleGetSignIn)
 	log.Fatal(app.Listen(os.Getenv("HTTP_LISTEN_ADDR")))
 }
 
@@ -149,4 +149,11 @@ func handleGetHome(c *fiber.Ctx) error {
 		"DemoCards": demoCards,
 	}
 	return c.Render("home/index", data)
+}
+
+func handleGetSignIn(c *fiber.Ctx) error {
+	data := fiber.Map{
+		"DemoCards": demoCards,
+	}
+	return c.Render("signin/index", data)
 }
