@@ -1,7 +1,8 @@
 # Temporary Landing Page for Vl360-Interactive
 
 This repository contains just a placeholder while other sections of the site are under development. 
-[Can Be Found Here](https://www.vl360-interactive.com/)
+
+[Live Site Can Be Found Here](https://www.vl360-interactive.com/)
 
 ## Features
 - Basic Go Fiber app structure
